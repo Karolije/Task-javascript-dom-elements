@@ -52,19 +52,17 @@ menuItem.forEach(function (element, index) {
     const menuUl = document.createElement('ul');
     element.appendChild(menuUl);
 
-    for (i = 0; i < list.length; i++) {
+    for (let i = 0; i < list.length; i++) {
 
-
-        const menuLi = document.createElement('li');
-        const menuLink = document.createElement('a');
-        const listId = list[i].id;
-        const listLink = list[i].link;
-        const listText = list[i].text;
-        const childUl = document.createElement('ul');
 
 
         if (list[i].parentId === null) {
 
+            const menuLi = document.createElement('li');
+            const menuLink = document.createElement('a');
+            const listId = list[i].id;
+            const listLink = list[i].link;
+            const listText = list[i].text;
             menuUl.appendChild(menuLi);
             menuLi.appendChild(menuLink);
             menuLi.setAttribute('data-id', listId);
@@ -75,9 +73,8 @@ menuItem.forEach(function (element, index) {
     }
 })
 
-const sectionWithLi = document.querySelectorAll('.article__list');
 
-if (sectionWithLi) {
+if (menuItem) {
     const articleLi = document.querySelectorAll('li');
 
     articleLi.forEach(function (item) {
@@ -92,7 +89,7 @@ if (sectionWithLi) {
             const articleUl = document.createElement('ul');
             item.appendChild(articleUl);
 
-            for (i = 0; i < children.length; i++) {
+            for (let i = 0; i < children.length; i++) {
             const articleLi = document.createElement('li');
             articleUl.appendChild(articleLi);
             const articleLink = document.createElement('a');
